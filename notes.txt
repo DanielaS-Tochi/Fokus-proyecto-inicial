@@ -104,3 +104,59 @@ Hemos abordado los eventos más comunes, y hay muchos otros que se pueden explor
 Arrow functions
 
 Hay varias formas de crear una función en Javascript, en este último video les introducimos las arrow functions y acá les dejamos un artículo que va a ayudar a comprender este tipo de función.
+
+Para saber más: trabajando con atributos
+Próxima Actividad
+
+Ahora, hablemos sobre la manipulación de atributos de elementos en el DOM usando JavaScript. Existen varias formas de manipular estos elementos, pero nos centraremos en cuatro métodos muy útiles y comunes: getAttribute, setAttribute, hasAttribute y removeAttribute.
+
+getAttribute:
+
+El método getAttribute se usa para obtener el valor de un atributo específico de un elemento HTML. Toma un argumento, que es el nombre del atributo del cual queremos recuperar el valor. Por ejemplo:
+
+// HTML: <div id="miElemento" data-info="Ejemplo de atributo">
+
+const elemento = document.getElementById('miElemento');
+const valorDelAtributo = elemento.getAttribute('data-info');
+console.log(valorDelAtributo); // Salida: "Ejemplo de atributo"
+Copia el código
+En este ejemplo, el método getAttributese utilizó para obtener el valor del atributo data-info del elemento con el ID "miElemento".
+
+setAttribute:
+
+El método setAttribute se utiliza para definir o modificar el valor de un atributo en un elemento HTML. Acepta dos argumentos: el primero es el nombre del atributo que queremos definir o modificar, y el segundo es el valor que queremos asignar a ese atributo. Si el atributo ya existe, el método setAttributelo sobrescribirá; de lo contrario, creará un nuevo atributo. Por ejemplo:
+
+// HTML: <p id="miParrafo">Texto inicial</p>
+
+const parrafo = document.getElementById('miParrafo');
+parrafo.setAttribute('id', 'parrafoModificado');
+parrafo.setAttribute('data-nuevo-atributo', 'Nuevo valor');
+Copia el código
+Después de ejecutar este código, el párrafo tendrá su ID cambiado a "parrafoModificado" y se agregará un nuevo atributo data-nuevo-atributo con el valor "Nuevo valor".
+
+hasAttribute:
+
+El método hasAttribute se utiliza para verificar si un elemento tiene un atributo específico. Toma un argumento, que es el nombre del atributo que queremos verificar. El método devolverá true si el atributo existe y false si el atributo no está presente. Veamos un ejemplo:
+
+// HTML: <a href="https://www.ejemplo.com" id="miEnlace">Enlace de ejemplo</a>
+
+const enlace = document.getElementById('miEnlace');
+const tieneHref = enlace.hasAttribute('href');
+console.log(tieneHref); // Salida: true
+const tieneTarget = enlace.hasAttribute('target');
+console.log(tieneTarget); // Salida: false
+Copia el código
+En este ejemplo, el método hasAttributese utilizó para verificar si el elemento con el ID "miEnlace" tiene el atributo "href" (lo cual es verdadero) y si tiene el atributo "target" (lo cual es falso).
+
+removeAttribute:
+
+El método removeAttribute se usa para eliminar un atributo específico de un elemento HTML. Toma un argumento, que es el nombre del atributo que queremos eliminar. Por ejemplo:
+
+// HTML: <img src="imagen.jpg" alt="Imagen de ejemplo" id="miImagen">
+
+const imagen = document.getElementById('miImagen');
+imagen.removeAttribute('alt');
+Copia el código
+Después de ejecutar este código, el atributo alt de la imagen será eliminado, lo que la hace menos accesible para personas con discapacidad visual y evita que el navegador muestre un texto alternativo cuando la imagen no se pueda cargar.
+
+En resumen, los métodos getAttribute, setAttribute, hasAttributey removeAttribute son herramientas poderosas en JavaScript para interactuar con atributos de elementos HTML. Permiten a los desarrolladores obtener, definir, verificar y eliminar atributos según sea necesario, lo que hace que la manipulación del DOM sea más eficiente y flexible. Al utilizar estos métodos de manera adecuada, es posible crear experiencias web más dinámicas e interactivas para los usuarios.
